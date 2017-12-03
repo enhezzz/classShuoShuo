@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的主页</title>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/personalStyle.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/user.css">
+  <!--<link rel="stylesheet" href="https://static.segmentfault.com/v-59cf75a6/global/css/responsive.css">-->
+</head>
+<body>
+<script type="text/template" class="navi">
+    <%include navigator_logined.ejs%>
+</script>
+<div id="nav"></div>
+<div class="post-topheader custom-">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <h1 class="h3 post-topheader__info--title" id="articleTitle" data-id="1190000011973904">
+          <a href="/a/1190000011973904"> 关于h5中的fetch方法解读</a>
+        </h1>
+        <div class="content__tech blog-type-common blog-type-1-before">
+
+          <span><i class="fa fa-pencil mr15 edit-tags" aria-hidden="true"></i></span>
+          <div class="article__author">
+            <a href="/u/hezhizhizhi" class="mr5 "><strong>嗯呵吱吱吱</strong></a>
+            6 天前发布
+            · <a href="/a/1190000011973904/edit">编辑</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-4 hidden-xs">
+        <ul class="post-topheader__side list-unstyled">
+          <li>
+            <button type="button" class="btn btn-success btn-sm " data-id="1190000011973904" id="sideLike"><span id="sideLikeText">赞</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;
+              <span id="sideLikeNum">0</span></button><button type="button" id="sideBookmark" class="btn btn-default btn-sm " data-id="1190000011973904" data-type="article"><span id="sideBookmarkText">收藏</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;<span id="sideBookmarkNum">5</span></button>                            </li>
+          <li>
+            <strong class="no-stress">106</strong> 次浏览
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt30" id="content"></div>
+<div class="mt10 text-center">
+  <button type="button" id="mainLike" data-id="1190000011973904" class="btn btn-success btn-lg mr15 "><span
+            id="mainLikeText">赞</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;
+    <span id="mainLikeNum">0 </span></button>
+  <button type="button" id="mainBookmark" data-type="article" data-id="1190000011973904"
+          class="btn btn-default btn-lg "><span id="mainBookmarkText">收藏</span>&nbsp;&nbsp;<span
+            class="seprator">|</span>&nbsp;&nbsp;<span id="mainBookmarkNum">5</span></button>
+</div>
+<script type="text/template" id="contentTemplate">
+    <%=articleDetail.content%>
+</script>
+<script type="text/template" class="ft">
+    <%include footer.ejs%>
+</script>
+<div id="foot">
+</div>
+</body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/ejs_production.js"></script>
+<script src="/js/personalJs.js"></script>
+<script>
+//  alert($('#contentTemplate').html())
+//  alert($('#contentTemplate').html().replace(/&gt;/g,'>'))
+//    console.log(typeof $('#contentTemplate').html());
+  $('#content').html($('#contentTemplate').html().replace(/&gt;/g,'>').replace(/&lt;/g,'<'));
+</script>
+</html>

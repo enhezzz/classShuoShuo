@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册新用户</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<%include navigator.ejs%>
+<div class="container">
+    <div class="page-header">
+        <h1>欢迎你前来注册!<small>填写下面的注册信息进行注册吧(*^__^*)</small></h1>
+    </div>
+    <form  action="doRegist" method="post" >
+        <div class="form-group" >
+            <label for="cardId" >学号</label>
+            <input type="num" class="form-control" id="cardId" name="cardId" placeholder="学号">
+        </div>
+        <div class="form-group">
+            <label for="name" >姓名</label>
+            <input id="name" type="text" class="form-control" name="name" placeholder="姓名">
+        </div>
+        <div class="form-group">
+            <label for="password" >密码</label>
+            <input id="password" name="password" type="password" class="form-control"  placeholder="密码">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">接受班级协议
+            </label>
+        </div>
+        <button id="regist" type="submit" class="btn btn-default" >注册</button>
+    </form>
+</div>
+<%include footer.ejs%>
+</body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+    $("#cardId").on("input",function (e) {
+        if($(this).val().trim().length == 10){
+            $.ajax({
+                method : "post",
+                url : "registValidate",
+                data : {
+                    cardId : $(this).val().trim()
+                },
+                dataType : "text"
+            }).done(function (result) {
+                console.log(result)
+                if(result == "1") {
+                    $("#cardId").parent().addClass("has-success").removeClass("has-warning");
+                    $("#cardId").next().remove();
+                }
+                if(result == "0"){
+                    $("#cardId").parent().addClass("has-warning").removeClass("has-success");
+                    $("#cardId").next().html('该学号已被注册');
+                }
+
+            });
+        }
+        if($(this).val().trim().length != 10){
+
+            if($("#cardId").next().length == 0)
+                $("#cardId").after('<span id="helpBlock2" class="help-block">学号应为10位数!</span>');
+            else
+                $("#cardId").next().html('学号应为10位数!');
+            $("#cardId").parent().addClass("has-warning").removeClass("has-success");
+
+        }
+    });
+    $("#regist").on("click",function (e) {
+        if($("#cardId").parent().hasClass("has-warning"))
+            e.preventDefault();
+        else
+            alert("注册成功,自动跳转到登录页面!");
+    })
+</script>
+</html>

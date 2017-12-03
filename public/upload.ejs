@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<%include navigator_logined.ejs%>
+<div class="container">
+
+    <form class="form-horizontal" action="doUpload" method="post" enctype="multipart/form-data">
+        <select class="form-control"  name="dir">
+            <%
+            for (let i = 0;i<dirName.length;i++){
+
+            %>
+            <option value="<%=dirName[i]%>"><%=dirName[i]%></option>
+            <%}%>
+        </select>
+        <input type="file" id="upload" name="file"><br>
+        <input type="submit" value="提交">
+    </form>
+
+</div>
+<%include footer.ejs%>
+</body>
+
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+</html>

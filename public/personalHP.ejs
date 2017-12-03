@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的主页</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/personalStyle.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" href="/css/jquery.Jcrop.min.css">
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="https://static.segmentfault.com/v-59cf75a6/global/css/responsive.css">-->
+</head>
+<body>
+
+    <%include navigator_logined.ejs%>
+
+<div id="nav"></div>
+<div class="profile">
+    <header class="profile__heading">
+        <div class="container">
+            <div class="page-header">
+                <h1><span  class="glyphicon glyphicon-home" style="color: #004E7E;"></span>你的小屋<small>欢迎回家</small></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-3 col-xs-3">
+                    <a href="javascript:void(0)" class="thumbnail">
+                        <img id="touxiang" src="/classShuoShuo/touxiang" alt="..." style="with:100%;">
+                    </a>
+                    <input type="file" name="" id="file" class="file-hidden" accept="image/png, image/jpeg, image/gif, image/jpg">
+                </div>
+                <div class="col-md-5 col-sm-9 col-xs-9">
+                    <h2 class="profile__heading--name">
+                        <span><%=name%></span>
+                        <small class=""><a href="#">查看完整资料</a></small>
+                    </h2>
+                    <div class="profile__heading--other">
+            <span class="profile__heading--other-item ">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <span class="profile__school">
+                    <span class="profile__heading--other-item-fgx hide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <span class="profile__heading-edit   btn btn-xs profile__heading-edit--init" data-type="school">
+                        <i class="fa fa-pencil hide" aria-hidden="true"></i>
+                        填写班级
+                    </span>
+                </span>
+            </span>
+                        <span class="profile__heading--other-item "><i class="fa fa-link"></i><span class="profile__site"><a class="profile__heading--other-item-link" target="_blank" href="http://"></a><span class="profile__heading-edit  btn btn-xs profile__heading-edit--init" data-type="site"><i class="fa fa-pencil hide" aria-hidden="true"></i>填写个人主网站</span></span></span>
+                    </div>
+                </div>
+                <!--<div class="profile__heading&#45;&#45;desc col-md-5 col-sm-12 col-xs-12"><div class="profile__heading&#45;&#45;desc-heading"><span class="profile__heading&#45;&#45;desc-heading-dot-warp"><span class="profile__heading-dot profile__heading-dot&#45;&#45;red"></span><span class="profile__heading-dot profile__heading-dot&#45;&#45;yellow"></span><span class="profile__heading-dot profile__heading-dot&#45;&#45;green"></span></span><div class="pull-right"><span data-type="desc" class="profile__heading-edit   btn btn-xs profile__heading&#45;&#45;desc-heading-edit"><i class="fa fa-pencil" aria-hidden="true"></i>编辑</span></div></div><div class="profile__heading&#45;&#45;desc-body"><script type="text/template" class="tpl__desc&#45;&#45;form"><form class="form form&#45;&#45;profile form__desc"-->
+                <!--data-action="/api/user/homepage/description/edit"><div class="form-group"><textarea class="form-control" name="description" rows="4"><\%= description %\></textarea></div><div class="text-right"><button type="button" class="btn btn-default js-cancel mr10">取消</button><button type="button" class="btn btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__desc&#45;&#45;content"><\% if(parsedText){ %\><\%= parsedText %\><\% }else{ %\><div style="white-space: pre"> _-->
+                <!--| |__ _ _ __ _-->
+                <!--| '_ \| | | |/ _` |-->
+                <!--| |_) | |_| | (_| |-->
+                <!--|_.__/ \__,_|\__, |-->
+                <!--|___/ 暂时没有个人简介，-->
+                <!--<a data-type="desc" href="javascript:;"-->
+                <!--class="profile__heading-edit">立即添加</a></div><\% } %\></script><div class="profile__desc"><p></p></div></div></div>-->
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap mt30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="mb15 hide"></div>
+                    <div class="profile__heading-info row">
+                        <div class="col-md-6 col-xs-6" style="border-right: 1px solid #eee;">
+                            <a href="/u/hezhizhizhi/users/following">
+                                <span>关注了</span>
+                                <span class="h5">0 人</span>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xs-6"><a href="/u/hezhizhizhi/users/followed"><span>粉丝</span><span
+                                        class="h5">0 人</span></a></div>
+                    </div>
+                    <ul class="nav nav-pills nav-stacked profile__nav">
+                        <li role="separator" class="divider"><a></a></li>
+                        <li class="active"><a href="/u/hezhizhizhi"><span>我的主页</span></a></li>
+                        <li><a id="shuoshuo" href="/classShuoShuo/homePage/shuoshuo"><span>我的说说
+                                        </span><span class="count"></span></a></li>
+                        <li><a href="/u/hezhizhizhi/questions"><span>我的提问
+                                        </span><span class="count"></span></a></li>
+                        <li><a href="/classShuoShuo/article"><span>我的文章
+                                        </span><span class="count"></span></a></li>
+                        <li><a href="/u/hezhizhizhi/lives"><span>我的回答
+                                        </span><span class="count"></span></a></li>
+                        <li><a href="/u/hezhizhizhi/notes"><span>我的笔记
+                                        </span><span class="count"></span></a></li>
+                        <li><a href="/u/hezhizhizhi/posts"><span>我的分享
+                                        </span><span class="count"></span></a></li>
+                        <li><a href="/u/hezhizhizhi/bookmarks"><span>我的收藏夹
+                                            </span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-7" id="content">
+                    <div class="panel panel-default mt30 timeline timeline-jsnotwork">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">个人说说</h3>
+                        </div>
+                        <p class="excerpt wordbreak hidden-xs ">
+                           <%for(let index = 0;index<shuoshuos.length;index++){%>
+                                <%=index + 1%>.<%=shuoshuos[index]%><br>
+                        <p class="text-muted mb0"><span class="info--meta mr10">赞 0 </span><span class="info--meta">收藏 0 </span><span class="info--meta ml10">评论 0 </span></p>
+                        <div class="media-body pt15 pb10"></div>
+
+                            <%}%>
+                        </p>
+
+                        <div class="panel-body pt0 pl0"><div class="profile__content">
+                                <div class="tab-content"></div><!-- tab-content 结束 -->
+                                <p class="text-right profile__content--footer mt10">
+                                    查看全部 <a href="/u/hezhizhizhi/activities">个人说说</a> →
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default mt30 timeline timeline-jsnotwork">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">个人说说</h3>
+                        </div>
+                        <div class="panel-body pt0 pl0"><div class="profile__content"><div class="tab-content"></div><!-- tab-content 结束 -->
+                                <p class="text-right profile__content--footer mt10">
+                                    查看全部 <a href="/u/hezhizhizhi/activities">个人说说</a> →
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default mt30 timeline timeline-jsnotwork"><div class="panel-heading"><h3 class="panel-title">个人说说</h3></div><div class="panel-body pt0 pl0"><div class="profile__content"><div class="tab-content"></div><!-- tab-content 结束 --><p class="text-right profile__content--footer mt10">
+                                    查看全部 <a href="/u/hezhizhizhi/activities">个人说说</a> →
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="profile__skill">
+                        <h4 class="profile__heading--tech-heading">擅长技能
+                            <div class="pull-right"><span data-type="tech" class="profile__heading-edit  btn btn-xs"><i class="fa fa-pencil" aria-hidden="true"></i>编辑</span></div></h4>
+                        <div class="profile__tech"><div class="init"><p class="text-center">
+                                    (ﾟ∀ﾟ　)<br>
+                                    暂时没有，<a data-type="tech" class="profile__heading-edit--tech" href="javascript:;">立即添加</a></p></div></div>
+                    </div>
+                    <div class="profile__skill">
+                        <div class="profile__skill--other">
+                            <p> 注册于 1 天前<br>个人主页被 2 人浏览</p>
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/template" class="ft">
+    <%include footer.ejs%>
+</script>
+<div id="foot">
+</div>
+
+
+<div class="sfmodal modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+     style="display: none;">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title">请选择合适的区域作为头像</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary done-btn">上传头像</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/ejs_production.js"></script>
+<script src="/js/personalJs.js"></script>
+<script src="/js/jquery.Jcrop.js"></script>
+<script>
+</script>
+</html>

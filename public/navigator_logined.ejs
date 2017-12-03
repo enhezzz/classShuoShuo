@@ -1,0 +1,188 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="row visible-xs">
+      <div class="col-xs-9" style="padding-right: 30px;">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="/img/school.jpg" width="30" height="30">
+        </a>
+        <ul class="pull-right" style="    padding: 15px 0 0;
+    margin-bottom: 0;
+    margin-right: -38px;">
+          <li><a id="msg" href=""><span class="glyphicon glyphicon-bell"></span><span class="badge">4</span></a></li>
+        </ul>
+        <ul class="opts pull-right" style="list-style: none">
+          <li class="opts__item dropdown hoverDropdown write-btns" style="margin-top: 6px">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary " id="shuldGoTo1" data-type="blog">
+                写文章
+              </button>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">显示下拉菜单</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/ask">提问题</a></li>
+                <li><a href="/submit">发头条</a></li>
+                <li><a href="/write">写文章</a></li>
+                <li><a href="/record">记笔记</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/user/draft">草稿箱（3）</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="pull-right" style="padding: 15px 0 0;margin-bottom: 0;
+                                        margin-right: -38px;">
+          <li>
+            <a href="" style="padding-left: 0">
+              <span class="glyphicon glyphicon-eye-open"></span>
+              <span class="badge people"></span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-xs-3">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/classShuoShuo">首页 <span class="sr-only">(current)</span></a></li>
+          <li><a href="/classShuoShuo/trends">动态</a></li>
+          <li><a href="/classShuoShuo/upload">上传文件</a></li>
+          <li><a href="/classShuoShuo/downLoad">下载资源</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">说说</a></li>
+              <li><a href="/classShuoShuo/myArticle">文章</a></li>
+              <li><a href="#">提问</a></li>
+              <li><a href="#">回答</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">收藏</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">笔记...</a></li>
+            </ul>
+
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" id="name" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=name%><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/classShuoShuo/homePage" id="homePage">我的主页</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/pubSS">发表说说</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/upLoad">上传作业</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/downLoad">下载资源</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/logout">退出登录</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row hidden-xs">
+      <div class="col-sm-8 col-md-9 col-lg-9">
+
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="/img/school.jpg" width="30" height="30">
+        </a>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/classShuoShuo">首页 <span class="sr-only">(current)</span></a></li>
+          <li><a href="/classShuoShuo/trends">动态</a></li>
+          <li><a href="/classShuoShuo/upload">上传文件</a></li>
+          <li><a href="/classShuoShuo/downLoad">下载资源</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">说说</a></li>
+              <li><a href="/classShuoShuo/myArticle">文章</a></li>
+              <li><a href="#">提问</a></li>
+              <li><a href="#">回答</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">收藏</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">笔记...</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" style="padding-left: 0">
+              <span class="glyphicon glyphicon-eye-open"></span>
+              <span class="badge people"></span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="col-sm-4 col-md-3 col-lg-3 text-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="msg" href=""><span class="glyphicon glyphicon-bell"></span><span class="badge">4</span></a></li>
+          <li class="dropdown">
+            <a href="#" id="name" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=name%><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/classShuoShuo/homePage" id="homePage">我的主页</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/pubSS">发表说说</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/upLoad">上传作业</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/downLoad">下载资源</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/classShuoShuo/logout">退出登录</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="opts pull-right" style="margin-left: -25%;">
+          <li class="opts__item dropdown hoverDropdown write-btns" style="margin-top: 6px"><div class="btn-group"><button type="button" class="btn btn-primary " id="shuldGoTo2" data-type="blog">
+                写文章
+              </button>
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"><span class="caret"></span><span class="sr-only">显示下拉菜单</span></button>
+              <ul class="dropdown-menu">
+                <li><a href="/ask">提问题</a></li>
+                <li><a href="/submit">发头条</a></li>
+                <li><a href="/write">写文章</a></li>
+                <li><a href="/record">记笔记</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/user/draft">草稿箱（3）</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+
+  </div><!-- /.container-fluid -->
+
+</nav>
+<script src="/babel-polyfill/dist/polyfill.min.js"></script>
+<script src="/fetch-ie8/fetch.js"></script>
+<script type="text/javascript">
+  document.getElementById("shuldGoTo2").onclick = function(){
+      location.pathname = "/classShuoShuo/homePage/publishArt";
+  };
+  document.getElementById("shuldGoTo1").onclick = function(){
+      location.pathname = "/classShuoShuo/homePage/publishArt";
+  };
+  var websocket = new WebSocket('ws://172.21.43.249:8080?id=<%=cardId%>');
+  websocket.onopen = function(open){
+      console.log('request connect...')
+      websocket.send(1)
+  }
+  websocket.onmessage = function(message){
+      console.log(message.data)
+      $('.people').text(message.data);
+  }
+</script>

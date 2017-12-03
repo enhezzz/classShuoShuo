@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body id="body">
+<%include navigator.ejs%>
+<div class="container">
+    <div class="page-header">
+        <h1>登录!</h1>
+    </div>
+    <form method="post" action="doLogin">
+        <div class="form-group">
+            <label for="cardId">学号</label>
+            <input type="text" class="form-control" id="cardId" name="cardId" placeholder="学号">
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="密码">
+        </div>
+        <button type="submit" class="btn btn-default" onclick="" id="login">登录</button>
+    </form>
+</div>
+<%include footer.ejs%>
+</body>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--<script src="/js/ejs_production.js"></script>-->
+<script>
+    $('#cardId').focus();
+    $("#login").on("click",function (e) {
+        e.preventDefault();
+        $.ajax({
+            method : "post",
+            url : "doLogin",
+            data : {
+                cardId : $("#cardId").val().trim(),
+                password : $("#password").val().trim()
+            },
+            dataType : "json"
+        }).done(function (result) {
+            console.log(result,typeof result)
+            if(result === 0){
+                alert("帐号或密码错误!");
+                $("#password").val("");
+                $("#cardId").val("").trigger("focus");
+            }
+            else if(result === 1){
+                alert("登录成功,自动跳转到首页!");
+                location.pathname = "/classShuoShuo";
+//                new EJS({url: '/index.ejs'}).update('body', result);
+            }
+        })
+    })
+
+</script>
+</html>

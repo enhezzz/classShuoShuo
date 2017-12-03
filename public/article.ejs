@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的主页</title>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/personalStyle.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/user.css">
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <!--<link rel="stylesheet" href="https://static.segmentfault.com/v-59cf75a6/global/css/responsive.css">-->
+</head>
+<body>
+
+    <%include navigator_logined.ejs%>
+
+<div id="nav"></div>
+<div class="profile">
+  <header class="profile__heading">
+    <div class="container">
+      <div class="page-header">
+        <h1><span  class="glyphicon glyphicon-home" style="color: #004E7E;"></span>你的小屋<small>欢迎回家</small></h1>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-sm-3 col-xs-3">
+          <a href="javascript:void(0)" class="thumbnail">
+            <img src="/img/school.jpg" alt="...">
+          </a>
+          <input type="file" name="" id="" class="file-hidden">
+        </div>
+        <div class="col-md-5 col-sm-9 col-xs-9">
+          <h2 class="profile__heading--name">
+            <span><%=name%></span>
+            <small class=""><a href="#">查看完整资料</a></small>
+          </h2>
+          <div class="profile__heading--other">
+            <span class="profile__heading--other-item ">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <span class="profile__school">
+                    <span class="profile__heading--other-item-fgx hide">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <span class="profile__heading-edit   btn btn-xs profile__heading-edit--init" data-type="school">
+                        <i class="fa fa-pencil hide" aria-hidden="true"></i>
+                        填写班级
+                    </span>
+                </span>
+            </span>
+            <span class="profile__heading--other-item "><i class="fa fa-link"></i><span class="profile__site"><a class="profile__heading--other-item-link" target="_blank" href="http://"></a><span class="profile__heading-edit  btn btn-xs profile__heading-edit--init" data-type="site"><i class="fa fa-pencil hide" aria-hidden="true"></i>填写个人主网站</span></span></span>
+          </div>
+        </div>
+        <!--<div class="profile__heading&#45;&#45;desc col-md-5 col-sm-12 col-xs-12"><div class="profile__heading&#45;&#45;desc-heading"><span class="profile__heading&#45;&#45;desc-heading-dot-warp"><span class="profile__heading-dot profile__heading-dot&#45;&#45;red"></span><span class="profile__heading-dot profile__heading-dot&#45;&#45;yellow"></span><span class="profile__heading-dot profile__heading-dot&#45;&#45;green"></span></span><div class="pull-right"><span data-type="desc" class="profile__heading-edit   btn btn-xs profile__heading&#45;&#45;desc-heading-edit"><i class="fa fa-pencil" aria-hidden="true"></i>编辑</span></div></div><div class="profile__heading&#45;&#45;desc-body"><script type="text/template" class="tpl__desc&#45;&#45;form"><form class="form form&#45;&#45;profile form__desc"-->
+        <!--data-action="/api/user/homepage/description/edit"><div class="form-group"><textarea class="form-control" name="description" rows="4"><\%= description %\></textarea></div><div class="text-right"><button type="button" class="btn btn-default js-cancel mr10">取消</button><button type="button" class="btn btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__desc&#45;&#45;content"><\% if(parsedText){ %\><\%= parsedText %\><\% }else{ %\><div style="white-space: pre"> _-->
+        <!--| |__ _ _ __ _-->
+        <!--| '_ \| | | |/ _` |-->
+        <!--| |_) | |_| | (_| |-->
+        <!--|_.__/ \__,_|\__, |-->
+        <!--|___/ 暂时没有个人简介，-->
+        <!--<a data-type="desc" href="javascript:;"-->
+        <!--class="profile__heading-edit">立即添加</a></div><\% } %\></script><div class="profile__desc"><p></p></div></div></div>-->
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap mt30">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="mb15 hide"></div>
+          <div class="profile__heading-info row">
+            <div class="col-md-6 col-xs-6" style="border-right: 1px solid #eee;">
+              <a href="/u/hezhizhizhi/users/following">
+                <span>关注了</span>
+                <span class="h5">0 人</span>
+              </a>
+            </div>
+            <div class="col-md-6 col-xs-6"><a href="/u/hezhizhizhi/users/followed"><span>粉丝</span><span
+                        class="h5">0 人</span></a></div>
+          </div>
+          <ul class="nav nav-pills nav-stacked profile__nav">
+            <li role="separator" class="divider"><a></a></li>
+            <li class="active"><a href="/u/hezhizhizhi"><span>我的主页</span></a></li>
+            <li><a id="shuoshuo" href="/classShuoShuo/homePage/shuoshuo"><span>我的说说
+                                        </span><span class="count"></span></a></li>
+            <li><a href="/u/hezhizhizhi/questions"><span>我的提问
+                                        </span><span class="count"></span></a></li>
+            <li><a href="/u/hezhizhizhi/articles"><span>我的文章
+                                        </span><span class="count"></span></a></li>
+            <li><a href="/u/hezhizhizhi/lives"><span>我的回答
+                                        </span><span class="count"></span></a></li>
+            <li><a href="/u/hezhizhizhi/notes"><span>我的笔记
+                                        </span><span class="count"></span></a></li>
+            <li><a href="/u/hezhizhizhi/posts"><span>我的分享
+                                        </span><span class="count"></span></a></li>
+            <li><a href="/u/hezhizhizhi/bookmarks"><span>我的收藏夹
+                                            </span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-10 profile-mine"><h4 class="profile-mine__heading"><span>我的专栏</span></h4>
+          <div class="profile-mine__content mb20">
+            <div class="row">
+              <div class="col-md-4 mt20"><h5 class="mt0"><a target="_blank" href="/blog/enhezzz">前端</a></h5>
+                <p class="text-muted mb0">0 人关注 • <%=articleItems.length%> 篇文章</p></div>
+            </div>
+          </div>
+          <h4 class="profile-mine__heading"><span>我的文章</span>
+            <div class="pull-right profile-mine__heading--filter"><span>排序: </span>
+              <div class="btn-group btn-group-xs"><a class="btn btn-default active "
+                                                     href="/u/hezhizhizhi/articles?sort=created" role="button">时间</a><a
+                        class="btn btn-default  " href="/u/hezhizhizhi/articles?sort=vote" role="button">得票</a></div>
+            </div>
+          </h4>
+          <%for(let article of articleItems){%>
+          <ul class="profile-mine__content">
+            <li>
+              <div class="row">
+                <div class="col-md-1">
+                  <span class="label label-warning  ">
+                    0票
+                  </span>
+                </div>
+                <div class="col-md-7 profile-mine__content--title-warp">
+                  <a class="profile-mine__content--title" href="/classShuoShuo/myArticle?articleCode=<%=article.articleCode%>"><%=article.articleName%></a>
+                </div>
+                <div class="col-md-2"><a href="/blog/enhezzz"><%=article.articleBlogid%></a></div>
+                <div class="col-md-2"><span class="profile-mine__content--date"><%=article.date%></span></div>
+              </div>
+            </li>
+          </ul>
+          <%}%>
+          <div class="text-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/template" class="ft">
+    <%include footer.ejs%>
+</script>
+<div id="foot">
+</div>
+</body>
+
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/ejs_production.js"></script>
+<script src="/js/personalJs.js"></script>
+</html>

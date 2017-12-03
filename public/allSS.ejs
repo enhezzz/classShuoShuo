@@ -1,0 +1,39 @@
+<%for(var i = 0;i<shuoshuos.length;i++){ %>
+  <div class="row ss" style="    border-bottom: 1px solid #eee;">
+    <p class="col-xs-10 col-sm-10 col-md-10">
+      <a href=""><%=shuoshuos[i].name%> </a><span> : <%=shuoshuos[i].content%></span><br>
+      <span><%=shuoshuos[i].date%></span>
+    </p>
+    <p class="col-xs-2 col-sm-2 col-md-2">
+          <a href="javascript:void(0)" onclick="show('<%=shuoshuos[i].serialCode%>')">评论</a>
+
+            <%if(shuoshuos[i].name === name){%>
+          <a href="?r=<%=shuoshuos[i].serialCode%>" class="del">删除</a>
+            <%}%>
+    </p>
+      <%for(let ss of shuoshuos[i].comments){%>
+      <div class="row">
+          <p class="col-xs-10 col-sm-10 col-md-10">
+
+              <%=ss.comment%><br>
+              <%=ss.date%><br>
+
+          </p>
+      </div>
+      <%}%>
+  </div>
+<img src="/img/loading.gif" alt="loading..." style="display: none;">
+<div class="row" id="<%=shuoshuos[i].serialCode%>" style="display: none;    border-bottom: 1px solid #eee;">
+    <div class="col-sm-9 col-md-8">
+        <form>
+            <div class="form-group">
+                <textarea class="form-control" rows="3" id="ssArea" placeholder="评论..." name="comment"></textarea>
+            </div>
+            <input type="hidden" name="serialCode" value="<%=shuoshuos[i].serialCode%>">
+            <input type="hidden" name="cardId" value="<%=shuoshuos[i].cardId%>">
+            <button type="button" class="btn btn-primary comment" >评论</button>
+            <button type="button" class="btn btn-danger" onclick="cancle('<%=shuoshuos[i].serialCode%>')">取消</button>
+        </form>
+    </div>
+</div>
+<%}%>
