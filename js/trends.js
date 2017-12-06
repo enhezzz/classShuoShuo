@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/10/10.
  */
-require("babel-polyfill");
+
 $("#nav").html($(".navi").html());
 $("#foot").html($(".ft").html());
 $("#allSS").html($(".as").html());
@@ -91,10 +91,10 @@ $('.comment').on('click',function (e) {
     <p class="col-xs-10 col-sm-10 col-md-10">
         
         ${$(this).siblings('.form-group').children()[0].value}<br>
-        ${result}
+        ${dateFormat(result, "yyyy-mm-dd HH:MM:ss")}
     </p>
 </div>`)
-            console.log(result)
+            console.log(dateFormat(result, "yyyy-mm-dd HH:MM:ss"))
         });
         // console.log(typeof date.json())
     });//返回一个resolve时间的promise,待解决

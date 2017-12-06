@@ -8,6 +8,7 @@ var fs = require("fs");
 var os = require('os');
 var session = require('express-session');
 var ws = require('ws');
+var dateFormat = require('dateformat');
 const url = require('url');
 var db = require("./mongodb");
 const uuidv1 = require('uuid/v1');
@@ -22,6 +23,7 @@ app.use("/",express.static(path.join(__dirname,"../node_modules")));
 app.use(express.static(path.join(__dirname,"../")));
 app.use(express.static(path.join(__dirname,"../")));
 app.use(express.static(path.join(__dirname,"../dir")));
+app.use(express.static(path.join(__dirname,"../lib")));
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 600000000 }}));
 app.engine('html', require('ejs').__express);//include标签所用
 // app.use(express.static(path.join(__dirname,"../public")))
@@ -200,6 +202,9 @@ app.get("/classShuoShuo/trends",function (req,res,next) {
                                     shuoshuos.sort(function (a, b) {
                                         return b.date.getTime() - a.date.getTime();
                                     });
+                                    shuoshuos.forEach(function (e,i) {
+                                        e.date = dateFormat(e.date, "yyyy-mm-dd HH:MM:ss");
+                                    })
                                     console.log(shuoshuos)
                                     var info = {};
                                     info.shuoshuos = shuoshuos;
@@ -543,7 +548,7 @@ app.get('/classShuoShuo/touxiang',(req,res) => {
 
 });
 app.listen("80","localhost",function () {
-    console.log("服务器监听3366端口成功!!!");
+    console.log("服务器监听80端口成功!!!");
 });
 //http----------------------------ws
 
