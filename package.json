@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bable": "babel js --out-dir lib --ignore app.js,mongodb.js"
+    "bable": "babel js/dateFormat.js  --out-file lib/dateFormat-compiled.js",
+    "start": " concurrently \"mongod --dbpath e:\\mongodb\"   "
   },
   "keywords": [],
   "author": "",
@@ -14,12 +15,14 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.3.7",
     "compression": "^1.7.1",
+    "dateformat": "^3.0.2",
     "ejs": "^2.5.7",
     "express": "^4.16.1",
     "express-session": "^1.15.6",
     "fetch-ie8": "^1.5.0",
     "formidable": "^1.1.1",
     "jquery": "^3.2.1",
+    "jquery.pin": "^1.0.1",
     "mongodb": "^2.2.33",
     "uuid": "^3.1.0",
     "wangeditor": "^3.0.13",
@@ -27,11 +30,12 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-amd": "^6.24.1",
     "babel-preset-env": "^1.6.1"
   },
   "babel": {
-    "presets": [
-      "env"
+    "plugins": [
+      "transform-es2015-modules-amd"
     ]
   }
 }

@@ -1,0 +1,53 @@
+<h4 class="profile-mine__heading">
+    <span>我的专栏</span>
+</h4>
+<div class="profile-mine__content mb20">
+    <div class="row">
+        <div class="col-md-4 mt20">
+            <h5 class="mt0">
+                <a target="_blank" href="/blog/enhezzz">前端</a>
+            </h5>
+            <p class="text-muted mb0">0 人关注 •
+                <%=articleItems.length%> 篇文章</p>
+        </div>
+    </div>
+</div>
+<h4 class="profile-mine__heading">
+    <span>我的文章</span>
+    <div class="pull-right profile-mine__heading--filter">
+        <span>排序: </span>
+        <div class="btn-group btn-group-xs">
+            <a class="btn btn-default active " href="/u/hezhizhizhi/articles?sort=created" role="button">时间</a>
+            <a class="btn btn-default  " href="/u/hezhizhizhi/articles?sort=vote" role="button">得票</a>
+        </div>
+    </div>
+</h4>
+<%for(let article of articleItems){%>
+    <ul class="profile-mine__content">
+        <li>
+            <div class="row">
+                <div class="col-md-1">
+                    <span class="label label-warning  ">
+                        0票
+                    </span>
+                </div>
+                <div class="col-md-7 profile-mine__content--title-warp">
+                    <a class="profile-mine__content--title" href="/classShuoShuo/myArticle?articleCode=<%=article.articleCode%>">
+                        <%=article.articleName%>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <a href="/blog/enhezzz">
+                        <%=article.articleBlogid%>
+                    </a>
+                </div>
+                <div class="col-md-2">
+                    <span class="profile-mine__content--date">
+                        <%=article.date%>
+                    </span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <%}%>
+        <div class="text-center"></div>

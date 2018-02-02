@@ -176,7 +176,7 @@
   document.getElementById("shuldGoTo1").onclick = function(){
       location.pathname = "/classShuoShuo/homePage/publishArt";
   };
-  var websocket = new WebSocket('ws://172.21.43.249:8080?id=<%=cardId%>');
+  var websocket = new WebSocket('ws://localhost:8080?id=<%=cardId%>');
   websocket.onopen = function(open){
       console.log('request connect...')
       websocket.send(1)

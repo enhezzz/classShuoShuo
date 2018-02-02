@@ -1,0 +1,28 @@
+<div class="panel panel-default mt30 timeline timeline-jsnotwork">
+    <div class="panel-heading">
+        <h3 class="panel-title">个人说说</h3>
+    </div>
+    <p class="excerpt wordbreak hidden-xs ">
+        <%for(let index = 0;index<shuoshuos.length;index++){%>
+            <%=index + 1%>.
+                <%=shuoshuos[index]["content"]%>
+                    <br>
+                    <p class="text-muted mb0">
+                        <span class="info--meta mr10">赞 0 </span>
+                        <span class="info--meta">收藏 0 </span>
+                        <span class="info--meta ml10">评论 0 </span>
+                    </p>
+                    <div class="media-body pt15 pb10"></div>
+
+                    <%}%>
+    </p>
+
+    <div class="panel-body pt0 pl0">
+        <div class="profile__content">
+            <div class="tab-content"></div>
+            <!-- tab-content 结束 -->
+            <p class="text-right profile__content--footer mt10>" 查看全部 <a href="/u/hezhizhizhi/activities">个人说说</a> →
+            </p>
+        </div>
+    </div>
+</div>

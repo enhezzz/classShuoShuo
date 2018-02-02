@@ -1,7 +1,7 @@
 @import url(https://static.segmentfault.com/v-59cf75a6/3rd/jcrop/css/jquery.Jcrop.min.css);
 @import url(https://static.segmentfault.com/v-59cf75a6/3rd/geshi/geshi.css);
 @import url(https://static.segmentfault.com/v-59cf75a6/3rd/colorpicker/css/colorpicker.css);
-
+@import url(font-awesome.min.css);
 [type="typeHelper"] {
     display: none
 }
@@ -4930,3 +4930,18 @@ tspan::selection {
 }
 
 /*# sourceMappingURL=user.css.map */
+.btn1{
+    display:inline-block;
+    padding:0 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.btn1.personal{
+    background-color: #FCF8E3;
+    color: #8A6D3B;
+
+}
+.btn1.personal:active{
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    
+}

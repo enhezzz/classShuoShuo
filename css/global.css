@@ -6880,6 +6880,13 @@ a, a:hover, a:active, a:focus {
     text-align: center
 }
 
+.tag img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    margin-top: -1px;
+}
+
 .tag[href]:hover, .tag[href]:focus {
     background-color: #017E66;
     color: #fff;
@@ -12547,3 +12554,8 @@ textarea {
 }
 
 /*# sourceMappingURL=global.css.map */
+@keyframes repeat {
+      0%   {background-color: rgb(231, 242, 237);}
+    50%  {background-color: rgb(255, 242, 171);}
+    100% {background-color: rgb(231, 242, 237)s;}
+}
